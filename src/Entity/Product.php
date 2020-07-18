@@ -31,6 +31,13 @@ class Product {
     /**
      * @var string
      *
+     * @ORM\Column(name="Category", type="string", nullable=false)
+     */
+    private $category ;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="Name", type="string", nullable=false)
      * @Assert\NotBlank
      * @Assert\Length(min=10)
