@@ -1,8 +1,21 @@
+
+
 .navbar-nav {
     float:none;
     margin:0 auto;
     display: block;
     text-align: center;
+
+}
+
+.navbar{
+    background: rgb(39,173,39);
+    background: radial-gradient(circle, rgba(39,173,39,1) 0%, rgba(255,255,255,1) 78%);
+    color: aliceblue;
+}
+
+.nav-item{
+    color: white;
 }
 
 .navbar-nav > li {
