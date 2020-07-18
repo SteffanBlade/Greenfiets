@@ -40,7 +40,7 @@ class Product {
     /**
      * @var string
      *
-     * @ORM\Column(name="Seller", type="string", nullable=true)
+     * @ORM\Column(name="Description", type="string", nullable=true)
      */
     private $description ;
 
