@@ -1,24 +1,12 @@
-
-
-.navbar-nav {
-    float:none;
-    margin:0 auto;
-    display: block;
-    text-align: center;
-
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar{
-    background: rgb(39,173,39);
-    background: radial-gradient(circle, rgba(39,173,39,1) 0%, rgba(255,255,255,1) 78%);
-    color: aliceblue;
-}
+    background-color: #08e1ae;
+    background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
 
-.nav-item{
-    color: white;
-}
 
-.navbar-nav > li {
-    display: inline-block;
-    float:none;
 }
