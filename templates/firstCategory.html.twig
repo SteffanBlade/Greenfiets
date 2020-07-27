@@ -15,7 +15,7 @@
                                 <img class="card-img-top rounded mx-auto d-block" src="/Images/demo-image.jpg"
                                      alt="Card image cap" style="height: 200px;width: 200px">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <h5 class="card-title" data-name = "{{ product.name }}">{{ product.name }}</h5>
                                     <p class="card-text">Something here</p>
 
 
@@ -26,7 +26,7 @@
                                                class="quantity-field" disabled>
                                         <input type="number" id="initialPrice" value="{{ product.price }}" max=""
                                                name="initialPrice" class="quantity-field d-none">
-                                            <input type="number" id="price" value="{{ product.price }}" max="" name="price" class="quantity-field" disabled>
+                                            <input type="number" id="price" value="0" max="" name="price" class="quantity-field" disabled>
                                         <input type="button" value="+" class="button-plus ml-1" data-field="quantity">
 
                                         <a href="#" class="btn btn-success">Add</a>
@@ -78,6 +78,7 @@
                 parent.find('input#price').val(currentPrice + initialPrice);
             } else {
                 parent.find('input[name=' + fieldName + ']').val(0);
+
             }
         }
 
@@ -94,6 +95,7 @@
                 parent.find('input#price').val(currentPrice - initialPrice);
             } else {
                 parent.find('input[name=' + fieldName + ']').val(0);
+
             }
         }
 
@@ -104,5 +106,29 @@
         $('.input-group').on('click', '.button-minus', function (e) {
             decrementValue(e);
         });
+    </script>
+    <script>
+        $(() => {
+
+            // Select elements by their data attribute
+            const $entryElements = $('[data-name]');
+
+            // Map over each element and extract the data value
+            const $autoCompleteItems =
+                $.map($entryElements, item => $(item).data('name'));
+
+            // You'll now have array containing string values
+            console.log($autoCompleteItems); // eg: ["1", "2", "3"]
+            $('#listSearch').autocomplete({
+                source:$autoCompleteItems
+            });
+
+        });
+
+        // var autoCompleteItems = $('[data-name]');
+        //
+        // $('#listSearch').autocomplete({
+        //     source:
+        // });
     </script>
 {% endblock %}
