@@ -30,4 +30,10 @@ class ProductController extends AbstractController {
             'products'=>$products
         ]);
     }
+    /**
+     * @Route("/shoppingCart")
+     * */
+    public function shopphingCart(){
+        return $this->render('shoppingCart.html.twig');
+    }
 }

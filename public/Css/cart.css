@@ -1,0 +1,18 @@
+.container{
+    max-width: 1000px;
+}
+.table>thead>tr.names>th{
+    border-bottom: 1px;
+}
+.table>tbody>tr.item>td{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    vertical-align: middle;
+}
+.table>tfoot>tr.no-border>td{
+    border-top: 0 none;
+    padding-top: 20px;
+}
+.img-product{
+    padding-top: 20px;
+}
