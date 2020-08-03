@@ -3,6 +3,7 @@
 namespace App\Controller ;
 
 use App\Entity\Product;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -35,5 +36,14 @@ class ProductController extends AbstractController {
      * */
     public function shopphingCart(){
         return $this->render('shoppingCart.html.twig');
+    }
+
+    /**
+     * @route("/add/{id}")
+     * */
+    public function Add($id){
+        $products = $this->getDoctrine()->getRepository(Product::class)->find($id);
+
+        $session = new Session()
     }
 }
