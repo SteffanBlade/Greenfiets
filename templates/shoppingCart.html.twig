@@ -24,8 +24,32 @@
 
                                 <td><input disabled class="form-control" type="text" value="1" /></td>
                                 <td class="text-right">{{ product.price }}</td>
-                                <td class="text-right"><a href="/remove/{{ product.id }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                                <td class="text-right"><a href="/remove/{{ product.id }}" id="delete-{{ product.id }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                             </tr>
+                            <script>
+
+
+                                $(document).on('click', 'a#delete-{{ product.id }}', function(){
+
+
+                                    $.ajax({
+                                        url:'/remove/{{ product.id }}',
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: {
+                                        },
+                                        async: true,
+                                        success: function (data)
+                                        {
+                                            alert("Deleted");
+                                            window.location = '/shoppingCart';
+                                        }
+                                    });
+                                    return false;
+
+                                });
+
+                            </script>
                         {% endfor %}
 
 

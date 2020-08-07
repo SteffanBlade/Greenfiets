@@ -53,10 +53,10 @@
                                     "quantity" : quantity
                                 },
                                 async: true,
-                                success: function (data)
+                                success: function ()
                                 {
-                                    alert("Added");
-                                    window.location = '/';
+                                    console.log("Added");
+                                    location.replace("/");
                                 }
                             });
                             return false;

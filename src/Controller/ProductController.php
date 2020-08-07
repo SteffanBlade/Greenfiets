@@ -108,7 +108,8 @@ class ProductController extends AbstractController {
             }
         }
 
-        return $this->redirectToRoute('shoppingCart');
+//        return $this->redirectToRoute('shoppingCart');
+            return new Response();
 
     }}
 
